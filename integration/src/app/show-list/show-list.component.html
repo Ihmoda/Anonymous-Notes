@@ -1,0 +1,9 @@
+
+<div class="box" *ngFor="let note of notes">
+    <p class="time">{{note.createdAt | date:'medium':'EST' }}</p>
+    <p class="text">{{note.text}}</p>
+    <form (submit)="delete(note._id)">
+        <button type="text" class="btn btn-danger">Delete</button>
+    </form>
+</div>
+{{notes | json}}
